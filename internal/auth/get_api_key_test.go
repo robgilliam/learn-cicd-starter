@@ -11,8 +11,8 @@ func TestGetApiKey(t *testing.T) {
 		expectedKey string
 		expectedErr error
 	}{
-		"happyPath": {http.Header{"Authorization": []string{"ApiKey my-api-key"}}, "my-api-key", nil},
-        "noAuthHeader": {http.Header{}, "", ErrNoAuthHeaderIncluded},
+		"happyPath":    {http.Header{"Authorization": []string{"ApiKey my-api-key"}}, "my-api-key", nil},
+		"noAuthHeader": {http.Header{}, "", ErrNoAuthHeaderIncluded},
 	}
 
 	for name, tc := range tests {
